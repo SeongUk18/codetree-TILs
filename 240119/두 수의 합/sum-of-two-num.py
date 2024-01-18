@@ -14,4 +14,4 @@ for i, j in combinations(numbers, 2):
         dic[j] = i
         num += 1
 
-print(num/2)
+print(int(num/2))
