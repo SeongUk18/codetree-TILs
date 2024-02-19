@@ -25,4 +25,4 @@ def bfs(node):
     return answer
 answer = bfs(1)
 
-print(answer-1)
+print(answer)
