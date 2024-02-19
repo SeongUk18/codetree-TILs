@@ -24,5 +24,5 @@ def bfs(node):
                 answer += 1
     return answer
 answer = bfs(1)
-# 1번 간선을 제외하기 위한 -1
+
 print(answer-1)
