@@ -21,8 +21,10 @@ def bfs(node):
         for k in node_list[node]:
             if not node_chk[k]:
                 q.append(k)
+                node_chk[k] = True
                 answer += 1
     return answer
+
 answer = bfs(1)
 
 print(answer)
