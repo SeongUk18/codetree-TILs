@@ -22,8 +22,8 @@ def bfs(node):
             next_x = cur_x + change_x[i]
             if next_y >= n or next_x >= m or map_chk[next_y][next_x] or map_list[next_y][next_x] == 0:
                 continue
-            elif next_x == (n - 1) and next_y == (m - 1):
-                return 1    
+            elif next_x == (m - 1) and next_y == (n - 1):
+                return 1
             else:
                 q.append((next_y, next_x))
                 map_chk[next_y][next_y] = True
