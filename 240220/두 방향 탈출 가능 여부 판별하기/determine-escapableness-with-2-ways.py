@@ -20,9 +20,9 @@ def bfs(node):
         for i in range(2):
             next_y = cur_y + change_y[i]
             next_x = cur_x + change_x[i]
-            if next_y > n - 1 or next_x > m - 1 or not map_chk[next_y][next_x] or map_list[next_y][next_x] == 0:
+            if next_y >= n or next_x >= m or not map_chk[next_y][next_x] or map_list[next_y][next_x] == 0:
                 continue
-            elif next_x == n - 1 and next_y == m - 1:
+            elif next_x == (n - 1) and next_y == (m - 1):
                 return 1
             else:
                 q.append((next_y,next_x))
