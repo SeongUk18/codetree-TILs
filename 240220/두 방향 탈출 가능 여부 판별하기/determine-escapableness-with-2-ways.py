@@ -26,7 +26,7 @@ def bfs(node):
                 return 1
             else:
                 q.append((next_y, next_x))
-                map_chk[next_y][next_y] = True
+                map_chk[next_y][next_x] = True
 
     return 0
 
