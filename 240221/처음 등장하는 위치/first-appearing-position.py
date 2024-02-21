@@ -1,7 +1,7 @@
 from sortedcontainers import SortedDict 
 
 n = int(input())
-numbers = input().split()
+numbers = list(map(int, input().split()))
 
 num_dic = SortedDict()
 
