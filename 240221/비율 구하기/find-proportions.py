@@ -14,5 +14,5 @@ for _ in range(n):
 sum_num = sum(list(color_dic.values()))
 
 for k, v in color_dic.items():
-    answer = round(v/sum_num*100, 5)
+    answer = v/sum_num * 100
     print("{} {:.4f}".format(k, answer))
