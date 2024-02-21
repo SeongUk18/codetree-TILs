@@ -13,4 +13,7 @@ n_dic = {v:k for k,v in t_dic.items()}
 t_index = list(t_dic.values())
 t_keys = list(t_dic.keys())
 index = t_index.index(1)
-print(t_keys[index])
+if 1 in t_keys:
+    print(t_keys[index])
+else:
+    print("None")
