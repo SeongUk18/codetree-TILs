@@ -10,5 +10,7 @@ for i in text:
         t_dic[i] = 1
 
 n_dic = {v:k for k,v in t_dic.items()}
-
-print(n_dic.get(1)[0])
+t_index = list(t_dic.values())
+t_keys = list(t_dic.keys())
+index = t_index.index(1)
+print(t_keys[index])
