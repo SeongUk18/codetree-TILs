@@ -1,5 +1,5 @@
 n = int(input())
-arr_1 = list(map(int, input().split()))
+arr_1 = set(map(int, input().split()))
 m = int(input())
 arr_2 = list(map(int, input().split()))
 
