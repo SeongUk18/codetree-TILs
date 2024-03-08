@@ -11,6 +11,6 @@ if m1 != m2:
             elapsed_days += num_of_days[i]
     elapsed_days += d2
 else:
-    elapsed_days = d2 - d1
+    elapsed_days = d2 - d1 + 1
 
 print(elapsed_days)
