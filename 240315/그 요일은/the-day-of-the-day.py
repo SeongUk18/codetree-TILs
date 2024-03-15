@@ -12,6 +12,8 @@ def count_weekday_occurrences(m1, d1, m2, d2, weekday):
     target_index = weekdays.index(weekday)
 
     # 전체 기간 동안 해당 요일이 발생하는 횟수 계산
+    if occurrences < 7:
+        return 0
     occurrences = total_days // 7  # 기본적으로 발생하는 주의 횟수
     if (start_weekday_index + total_days % 7) >= target_index:
         occurrences += 1
