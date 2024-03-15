@@ -18,4 +18,7 @@ else:
     elapsed_days = d2 - d1 + 1
 
 elapsed_days = elapsed_days - index
-print(elapsed_days//7 + 1)
+if elapsed_days >= 0:
+    print(elapsed_days//7 + 1)
+else:
+    print(0)
