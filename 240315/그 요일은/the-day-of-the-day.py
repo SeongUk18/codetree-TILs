@@ -1,4 +1,5 @@
 m1, d1, m2, d2 = map(int, input().split())
+day_week = input()
 elapsed_days = 0
 
 #                  1.  2.  3.  4.  5.  6.  7.  8.  9. 10. 11. 12.
