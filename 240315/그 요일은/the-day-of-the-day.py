@@ -17,5 +17,5 @@ if m1 != m2:
 else:
     elapsed_days = d2 - d1 + 1
 
-elapsed_days = elapsed_days + index
-print(elapsed_days//7)
+elapsed_days = elapsed_days - index
+print(elapsed_days//7 + 1)
