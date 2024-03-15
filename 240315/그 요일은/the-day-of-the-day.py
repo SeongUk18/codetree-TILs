@@ -23,16 +23,13 @@ full_weeks = total_days // 7
 
 # 추가 일수 계산
 extra_days_start = 0
-extra_days_end = (extra_days_start + total_days) % 7  # 종료 날짜 이후의 요일
+extra_days_end = total_days % 7  # 종료 날짜 이후의 요일
 
 # 발생 횟수 계산
 occurrences = full_weeks
-if extra_days_start <= target_index:
-    if extra_days_end + 7 * full_weeks >= target_index:
-        occurrences += 1
-elif extra_days_start > target_index:
-    if extra_days_end < extra_days_start:
-        if target_index < extra_days_end or target_index >= extra_days_start:
-            occurrences += 1
+
+if extra_days_end >= target_index:
+    occurrences += 1
+
 
 print(occurrences)
