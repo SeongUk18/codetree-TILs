@@ -22,7 +22,7 @@ target_index = weekdays.index(weekday)
 full_weeks = total_days // 7
 
 # 추가 일수 계산
-extra_days_start = (d1 - 1) % 7  # 시작 날짜의 요일
+extra_days_start = 0
 extra_days_end = (extra_days_start + total_days) % 7  # 종료 날짜 이후의 요일
 
 # 발생 횟수 계산
