@@ -8,11 +8,11 @@ for _ in range(n):
     x, direction = input().split()
     x = int(x)
     if direction == "R":
-        for i in range(x):
+        for i in range(1, x + 1):
             start += 1
             way[start] += 1
     else:
-        for i in range(x):
+        for i in range(1, x + 1):
             start -= 1
             way[start] += 1
 
