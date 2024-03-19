@@ -3,7 +3,6 @@ n = int(input())
 way = [0 for _ in range(2001)]
 
 start = 1000
-way[start] = 1
 
 for _ in range(n):
     x, direction = input().split()
@@ -13,7 +12,7 @@ for _ in range(n):
             way[start + i] += 1
         start += x
     else:
-        for i in range(x):
+        for i in range(1, x + 1):
             way[start - i] += 1
         start -= x
 
