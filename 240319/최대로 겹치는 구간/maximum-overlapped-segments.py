@@ -10,3 +10,4 @@ for _ in range(n):
         answer_list[x1 + i] += 1
 
 print(max(answer_list) - 1)
+print(answer_list)
