@@ -9,11 +9,11 @@ for _ in range(n):
     if direction == "R":
         for i in range(x):
             way[start + i] += "B"
-        start += x
+        start += x - 1
     else:
-        for i in range(1, x + 1):
+        for i in range(x):
             way[start - i] += "W"
-        start -= x
+        start -= x - 1
 
 black = 0
 white = 0
@@ -26,6 +26,5 @@ for i in way:
             white += 1
         elif i[-1] == "B":
             black += 1
-        
 
 print(f"{white} {black} {gray}")
