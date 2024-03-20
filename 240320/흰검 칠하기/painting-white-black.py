@@ -19,7 +19,7 @@ black = 0
 white = 0
 gray = 0
 for i in way:
-    if len(i) > 3:
+    if i.count("W") > 1 and i.count("B") > 1:
         gray += 1
     elif i:
         if i[-1] == "W":
