@@ -8,7 +8,7 @@ for _ in range(n):
 
     for i in range(8):
         for j in range(8):
-            if map_list[i + y][j + x] == 1:
+            if map_list[i + y + 100][j + x + 100] == 1:
                 continue
             else:
                 map_list[i + y][j + x] = 1
