@@ -1,6 +1,6 @@
 n = int(input())
 
-map_list = [[0 for _ in range(100)] for _ in range(100)]
+map_list = [[0 for _ in range(201)] for _ in range(201)]
 answer = 0
 
 for _ in range(n):
