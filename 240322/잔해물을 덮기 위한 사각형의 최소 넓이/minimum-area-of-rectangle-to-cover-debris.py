@@ -34,12 +34,14 @@ if answer_x:
     max_x = max(answer_x) - 1000
     min_x = min(answer_x) - 1000
 else:
-    max_x, min_x = 0
+    max_x = 0
+    min_x = 0
 if answer_y:
     min_y = min(answer_y) - 1000
     max_y = max(answer_y) - 1000
 else:
-    max_y, min_y = 0
+    max_y = 0
+    min_y = 0
 
 
 
