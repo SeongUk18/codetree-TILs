@@ -30,9 +30,17 @@ for i in range(len(map_list)):
             answer_x.append(j)
             answer_y.append(i)
 # print(answer_x, answer_y)
-max_x = max(answer_x) - 1000
-min_x = min(answer_x) - 1000
-min_y = min(answer_y) - 1000
-max_y = max(answer_y) - 1000
+if answer_x:
+    max_x = max(answer_x) - 1000
+    min_x = min(answer_x) - 1000
+else:
+    max_x, min_x = 0
+if answer_y:
+    min_y = min(answer_y) - 1000
+    max_y = max(answer_y) - 1000
+else:
+    max_y, min_y = 0
+
+
 
 print((max_x - min_x) * (max_y - min_y))
