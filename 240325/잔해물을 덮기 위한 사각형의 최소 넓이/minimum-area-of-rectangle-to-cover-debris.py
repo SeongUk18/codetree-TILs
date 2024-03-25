@@ -16,8 +16,8 @@ y1 += 1000
 x2 += 1000
 y2 += 1000
 
-for i in range(y2 - y1):
-    for j in range(x2 - x1):
+for i in range(1, y2 - y1):
+    for j in range(1, x2 - x1):
         map_list[y1 + i][x1 + j] = 0
 
 answer_x = []
