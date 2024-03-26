@@ -1,6 +1,6 @@
 n = int(input())
 
-cnt = 1
+cnt = 0
 answer = 0
 def check(number):
     if number > 0:
@@ -14,6 +14,7 @@ for i in range(n):
 
     if i == 0:
         flag = check(number)
+        cnt = 1
     
     if flag == check(number):
         cnt += 1
