@@ -13,15 +13,15 @@ for i in range(n):
     number = int(input())
 
     if i == 0:
-        flag = check(number)
         cnt = 1
-    
-    if flag == check(number):
-        cnt += 1
         flag = check(number)
     else:
-        cnt = 1
-        flag = check(number)
+        if flag == check(number):
+            cnt += 1
+            flag = check(number)
+        else:
+            cnt = 1
+            flag = check(number)
     
     answer = max(answer, cnt)
 
