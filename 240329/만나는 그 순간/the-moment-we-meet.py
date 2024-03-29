@@ -40,5 +40,7 @@ answer = n * m
 for i in range(len(A)):
     if A[i] == B[i] and A[i] != 0:
         answer = min(A[i], answer)
-
-print(answer)
+if answer == n * m:
+    print(-1)
+else:
+    print(answer)
