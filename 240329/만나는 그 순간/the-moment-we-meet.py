@@ -8,12 +8,12 @@ for _ in range(n):
     commend, move = input().split()
     move = int(move)
     if commend == "R":
-        for i in range(move):
+        for i in range(1, move):
             A[start + i] = cnt
             start += move
             cnt += 1
     else:
-        for i in range(move):
+        for i in range(1, move):
             A[start - i] = cnt
             start -= move
             cnt += 1
@@ -25,12 +25,12 @@ for _ in range(m):
     commend, move = input().split()
     move = int(move)
     if commend == "R":
-        for i in range(move):
+        for i in range(1, move):
             B[start + i] = cnt
             start += move
             cnt += 1
     else:
-        for i in range(move):
+        for i in range(1, move):
             B[start - i] = cnt
             start -= move
             cnt += 1
