@@ -1,8 +1,8 @@
 n, m = map(int, input().split())
 
-A = [0 for _ in range(2002)]
-B = [0 for _ in range(2002)]
-start = 1000
+A = [0 for _ in range(2000001)]
+B = [0 for _ in range(2000001)]
+start = 10000
 cnt = 1
 for _ in range(n):
     commend, move = input().split()
@@ -19,7 +19,7 @@ for _ in range(n):
         start -= move
 
 
-start = 1000
+start = 10000
 cnt = 1
 for _ in range(m):
     commend, move = input().split()
@@ -36,11 +36,12 @@ for _ in range(m):
         start -= move
 
 
-answer = n * m
+answer = n * m * 10
 for i in range(len(A)):
     if A[i] == B[i] and A[i] != 0:
         answer = min(A[i], answer)
-if answer == n * m:
+
+if answer == n * m * 10:
     print(-1)
 else:
     print(answer)
