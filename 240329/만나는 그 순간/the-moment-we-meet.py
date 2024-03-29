@@ -1,7 +1,7 @@
 n, m = map(int, input().split())
 
-A = [0 for _ in range(2001)]
-B = [0 for _ in range(2001)]
+A = [0 for _ in range(2002)]
+B = [0 for _ in range(2002)]
 start = 1000
 cnt = 1
 for _ in range(n):
