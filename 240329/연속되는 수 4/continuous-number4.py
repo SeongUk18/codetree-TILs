@@ -2,7 +2,7 @@ n = int(input())
 
 num = int(input())
 cnt_list = []
-cnt = 0
+cnt = 1
 
 for _ in range(n-1):
     number = int(input())
