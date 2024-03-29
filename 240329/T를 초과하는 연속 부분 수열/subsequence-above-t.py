@@ -14,4 +14,7 @@ for i in num_list[1:]:
     number = i
 cnt_list.append(cnt)
 
-print(max(cnt_list))
+if max(cnt_list) == 1:
+    print(0)
+else:
+    print(max(cnt_list))
