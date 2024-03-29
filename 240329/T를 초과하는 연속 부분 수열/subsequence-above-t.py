@@ -15,4 +15,4 @@ for i in range(len(num_list)):
     answer = max(cnt, answer)
 
 
-    print(answer)
+print(answer)
