@@ -10,13 +10,13 @@ for _ in range(n):
     if commend == "R":
         for i in range(1, move + 1):
             A[start + i] = cnt
-            start += move
             cnt += 1
+        start += move
     else:
         for i in range(1, move + 1):
             A[start - i] = cnt
-            start -= move
             cnt += 1
+        start -= move
 
 
 start = 1000
@@ -27,13 +27,13 @@ for _ in range(m):
     if commend == "R":
         for i in range(1, move + 1):
             B[start + i] = cnt
-            start += move
             cnt += 1
+        start += move
     else:
         for i in range(1, move + 1):
             B[start - i] = cnt
-            start -= move
             cnt += 1
+        start -= move
 
 
 answer = n * m
