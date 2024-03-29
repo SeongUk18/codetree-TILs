@@ -9,9 +9,11 @@ for _ in range(n-1):
     if number > num:
         cnt += 1
         num = number
-        cnt_list.append(cnt)
+        
     else:
-        cnt_list.append(1)
+        cnt = 1
         num = number
+    cnt_list.append(cnt)
+
 
 print(max(cnt_list))
