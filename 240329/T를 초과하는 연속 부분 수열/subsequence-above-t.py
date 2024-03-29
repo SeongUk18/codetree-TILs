@@ -9,6 +9,7 @@ for i in range(len(num_list)):
         number = num_list[i]
         cnt = 0
     elif num_list[i] <= t:
+        cnt = 0
         continue
     elif num_list[i] > number:
         cnt += 1
