@@ -16,7 +16,7 @@ for i in range(len(num_list)):
     answer = max(cnt, answer)
 
 
-if num_list[0] <= t:
-    print(0)
+if answer == 0 and num_list[0] > t:
+    print(1)
 else:
     print(answer)
