@@ -4,7 +4,7 @@ n, t = map(int, input().split())
 
 n_list = deque()
 
-for _ in range(n):
+for _ in range(3):
     n_list.extend(list(map(int, input().split())))
 
 
