@@ -13,11 +13,8 @@ for _ in range(t):
 
 # print(n_list)
 
-for i in range(n):
-    print(n_list[i], end=" ")
-print()
-for i in range(n, len(n_list) - n):
-    print(n_list[i], end=" ")
-print()
-for i in range(2 * n, len(n_list)):
-    print(n_list[i], end=" ")
+n_list = list(n_list)
+
+for i in range(0, len(n_list), n):
+        chunk = n_list[i : i + n]
+        print(' '.join(map(str, chunk)))
