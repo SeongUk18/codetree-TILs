@@ -16,5 +16,5 @@ for _ in range(t):
 n_list = list(n_list)
 
 for i in range(0, len(n_list), n):
-        chunk = n_list[i : i + n]
+        chunk = n_list[i:i+n]
         print(' '.join(map(str, chunk)))
