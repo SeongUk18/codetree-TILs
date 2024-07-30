@@ -16,9 +16,9 @@ for _ in range(k):
     r, c = map(int, input().split())
     r -= 1
     c -= 1
-    if map_check[c][r]:
+    if map_check[r][c]:
         q.append((r, c))
-        map_check[c][r] = False
+        map_check[r][c] = False
         count += 1
 
     while q:
