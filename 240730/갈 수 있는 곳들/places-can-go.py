@@ -7,7 +7,7 @@ map_check = [[True for _ in range(n)] for _ in range(n)]
 x_list = [0, 0, -1, 1]
 y_list = [-1, 1, 0, 0]
 q = deque()
-count = 1
+count = 0
 
 for _ in range(n):
     map_list.append(list(map(int, input().split())))
@@ -16,8 +16,10 @@ for _ in range(k):
     r, c = map(int, input().split())
     r -= 1
     c -= 1
-    q.append((r, c))
-    map_check[c][r] = False
+    if map_check[c][r]:
+        q.append((r, c))
+        map_check[c][r] = False
+        count += 1
 
     while q:
         cur_x, cur_y = q.popleft()
