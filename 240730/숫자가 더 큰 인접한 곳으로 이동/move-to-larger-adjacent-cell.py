@@ -4,8 +4,8 @@ c -= 1
 map_list = []
 map_check = [[True for _ in range(n)] for _ in range(n)]
 
-x_list = [1, -1, 0, 0]
-y_list = [0, 0, 1, -1]
+x_list = [0, 0, -1, 1]
+y_list = [-1, 1, 0, 0]
 
 for _ in range(n):
     map_list.append(list(map(int, input().split())))
@@ -14,13 +14,13 @@ def serch(map_list, map_check, r, c):
     n_r, n_c = r, c  
     cur = map_list[r][c]
     for i in range(4):
-        nx = r + x_list[i]
-        ny = c + y_list[i]
-        if 0 <= nx < n and 0 <= ny < n and map_check[nx][ny]:  
-            cur_n = map_list[nx][ny]
-            map_check[nx][ny] = False
+        nx = c + x_list[i]
+        ny = r + y_list[i]
+        if 0 <= nx < n and 0 <= ny < n and map_check[ny][nx]:  
+            cur_n = map_list[ny][nx]
+            map_check[ny][nx] = False
             if cur <= cur_n:
-                n_r, n_c = nx, ny
+                n_r, n_c = ny, nx
                 break
                 
     
