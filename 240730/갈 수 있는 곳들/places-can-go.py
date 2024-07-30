@@ -17,7 +17,7 @@ for _ in range(k):
     r -= 1
     c -= 1
     q.append((r, c))
-    map_check[r][c] = False
+    map_check[c][r] = False
 
     while q:
         cur_x, cur_y = q.popleft()
