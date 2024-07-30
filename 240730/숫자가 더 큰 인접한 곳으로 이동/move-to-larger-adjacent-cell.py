@@ -12,29 +12,29 @@ for _ in range(n):
 
 def serch(map_list, map_check, r, c):
     n_r, n_c = r, c  
-    cur = map_list[r][c]
+    cur = map_list[c][r]
     for i in range(4):
-        nx = r + x_list[i]
-        ny = c + y_list[i]
+        nx = c + x_list[i]
+        ny = r + y_list[i]
         if 0 <= nx < n and 0 <= ny < n and map_check[nx][ny]:  
             cur_n = map_list[nx][ny]
             map_check[nx][ny] = False
             if cur <= cur_n:
-                n_r, n_c = nx, ny
+                n_c, n_r = nx, ny
                 break
                 
     
     return n_r, n_c
 
-num_list = [map_list[r][c]]
-map_check[r][c] = False  
+num_list = [map_list[c][r]]
+map_check[c][r] = False  
 
 while True:
     r, c = serch(map_list, map_check, r, c)
-    if num_list[-1] == map_list[r][c]: 
+    if num_list[-1] == map_list[c][r]: 
         break
     else:
-        num_list.append(map_list[r][c])
+        num_list.append(map_list[c][r])
 
 for i in num_list:
     print(i, end= " ")
