@@ -28,9 +28,9 @@ for _ in range(k):
             nx = cur_x + x_list[i]
             ny = cur_y + y_list[i]
 
-            if 0 <= nx < n and 0 <= ny < n and map_check[ny][nx] and map_list[ny][nx] == 0:
+            if 0 <= nx < n and 0 <= ny < n and map_check[nx][ny] and map_list[nx][ny] == 0:
                 q.append((nx, ny))
-                map_check[ny][nx] = False
+                map_check[nx][ny] = False
                 count += 1
 
 print(count)
