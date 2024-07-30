@@ -14,6 +14,8 @@ for _ in range(n):
 
 for _ in range(k):
     r, c = map(int, input().split())
+    r -= 1
+    c -= 1
     q.append((r, c))
     map_check[r][c] = False
 
