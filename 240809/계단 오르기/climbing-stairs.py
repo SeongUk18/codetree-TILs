@@ -19,4 +19,4 @@ def sol(n):
 
     return dp[n]
 
-print(sol(n))
+print(sol(n) % 10007)
