@@ -8,7 +8,7 @@ for _ in range(n):
 
 
 # 맵 맨 아래줄부터 m, k 가 들어갈 수 있는지 확인
-for i in range(n - 1, -1, -1):
+for i in range(1, n):
     if all(space[i][j] == 0 for j in range(k - 1, k - 1 + m)):
         for j in range(k - 1, k - 1 + m):
             space[i][j] = 1
