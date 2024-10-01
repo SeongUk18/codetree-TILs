@@ -10,7 +10,8 @@ for _ in range(n):
     map_list.append(list(map(int, input().split())))
 
 for i in range(m):
-    bead[i].append(list(map(int, input().split())))
+    r, c = map(int, input().split())
+    bead[i].append([r - 1, c - 1]) # 좌표값이 1부터 시작해서 -1 추가
 
 # 상하좌우 확인용
 x_list = [0, 0, -1, 1]
@@ -26,12 +27,12 @@ for _ in range(t):
         max_num = 0
         next_locate = []
         for k in range(4):
-            cur_x = x + x_list[k] - 1  # 좌표값이 1부터 시작해서 -1 추가
-            cur_y = y + y_list[k] - 1
+            cur_x = x + x_list[k]
+            cur_y = y + y_list[k]
             if 0 <= cur_x < m and 0 <= cur_y < m:
                 if max_num < map_list[cur_y][cur_x]:
                     max_num = map_list[cur_y][cur_x]
-                    next_locate = [cur_x - 1, cur_y - 1]
+                    next_locate = [cur_x, cur_y]
         # 왔다 갔는지 확인
         if next_locate in locate:
             del bead[key]
