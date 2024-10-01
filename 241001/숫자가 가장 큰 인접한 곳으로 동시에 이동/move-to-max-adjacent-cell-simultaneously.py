@@ -14,8 +14,8 @@ for i in range(m):
     bead[i].append([r - 1, c - 1])  # 좌표값이 1부터 시작해서 -1 추가
 
 # 상하좌우 확인용
-x_list = [0, 0, -1, 1]
-y_list = [-1, 1, 0, 0]
+x_list = [-1, 1, 0, 0]
+y_list = [0, 0, -1, 1]
 
 
 for _ in range(t):
