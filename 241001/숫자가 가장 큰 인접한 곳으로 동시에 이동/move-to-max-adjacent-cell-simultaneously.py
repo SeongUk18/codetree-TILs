@@ -19,12 +19,12 @@ y_list = [-1, 1, 0, 0]
 
 
 for _ in range(t):
-    bead_copy = dict(bead)
-    for key, locate in bead_copy.items():
+    next_positions = defaultdict(list)
+    for key, locate in bead.items():
         if not locate:
             continue
         x, y = locate[-1]
-        max_num = 0
+        max_num = -1
         next_locate = []
         for k in range(4):
             cur_x = x + x_list[k]
@@ -33,10 +33,14 @@ for _ in range(t):
                 if max_num < map_list[cur_y][cur_x]:
                     max_num = map_list[cur_y][cur_x]
                     next_locate = [cur_x, cur_y]
-        # 왔다 갔는지 확인
-        if next_locate in locate:
-            del bead[key]
-        else:
-            bead[key].append(next_locate)
+
+        if next_locate:
+            next_positions[tuple(next_locate)].append(key)
+        
+    bead.clear()
+    for position, keys in next_positions.items():
+        if len(keys) == 1:
+            bead[keys[0]].append(list(position))
+
                 
 print(len(bead))
