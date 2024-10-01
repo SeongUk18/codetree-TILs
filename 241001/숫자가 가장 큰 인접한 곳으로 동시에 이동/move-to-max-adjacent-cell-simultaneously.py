@@ -28,7 +28,7 @@ for _ in range(t):
             if 0 <= cur_x < m and 0 <= cur_y < m:
                 if max_num < map_list[cur_y][cur_x]:
                     max_num = map_list[cur_y][cur_x]
-                    next_locate = [cur_x, cur_y]
+                    next_locate = [cur_x - 1, cur_y - 1]
         # 왔다 갔는지 확인
         if next_locate in locate:
             del bead[key]
