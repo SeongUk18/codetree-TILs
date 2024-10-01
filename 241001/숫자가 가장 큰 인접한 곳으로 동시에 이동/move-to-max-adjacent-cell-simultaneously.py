@@ -23,8 +23,8 @@ for _ in range(t):
         max_num = 0
         next_locate = []
         for k in range(4):
-            cur_x = x_list[k] - 1  # 좌표값이 1부터 시작해서 -1 추가
-            cur_y = y_list[k] - 1
+            cur_x = x + x_list[k] - 1  # 좌표값이 1부터 시작해서 -1 추가
+            cur_y = y + y_list[k] - 1
             if 0 <= cur_x < m and 0 <= cur_y < m:
                 if max_num < map_list[cur_y][cur_x]:
                     max_num = map_list[cur_y][cur_x]
