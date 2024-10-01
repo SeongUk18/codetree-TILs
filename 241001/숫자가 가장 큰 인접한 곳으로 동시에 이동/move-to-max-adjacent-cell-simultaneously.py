@@ -20,6 +20,8 @@ y_list = [-1, 1, 0, 0]
 for _ in range(t):
     bead_copy = dict(bead)
     for key, locate in bead_copy.items():
+        if not locate:
+            continue
         x, y = locate[-1]
         max_num = 0
         next_locate = []
