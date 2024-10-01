@@ -18,7 +18,8 @@ y_list = [-1, 1, 0, 0]
 
 
 for _ in range(t):
-    for key, locate in bead.items():
+    bead_copy = dict(bead)
+    for key, locate in bead_copy.items():
         x, y = locate[-1]
         max_num = 0
         next_locate = []
