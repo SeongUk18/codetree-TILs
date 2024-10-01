@@ -29,7 +29,7 @@ for _ in range(t):
         for k in range(4):
             cur_x = x + x_list[k]
             cur_y = y + y_list[k]
-            if 0 <= cur_x < m and 0 <= cur_y < m:
+            if 0 <= cur_x < n and 0 <= cur_y < n:
                 if max_num < map_list[cur_y][cur_x]:
                     max_num = map_list[cur_y][cur_x]
                     next_locate = [cur_x, cur_y]
