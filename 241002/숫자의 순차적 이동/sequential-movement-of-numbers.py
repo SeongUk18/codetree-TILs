@@ -38,6 +38,7 @@ for _ in range(t):
         map_list[x][y], map_list[next_position[0]][next_position[1]] = map_list[next_position[0]][next_position[1]], map_list[x][y]
         # 위치 정보도 갱신
         position_dict[map_list[x][y]] = (x, y)
+        position_dict[map_list[next_position[0]][next_position[1]]] = next_position
         
 
 for i in range(n):
