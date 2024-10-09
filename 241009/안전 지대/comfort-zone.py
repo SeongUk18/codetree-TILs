@@ -9,7 +9,7 @@ map_list = []
 for _ in range(n):
     map_list.append(list(map(int, input().split())))
  
-answer = (0, 0)
+answer = (1, 0)
 x_list = [0, 0, -1, 1]
 y_list = [-1, 1, 0, 0]
 
