@@ -25,7 +25,7 @@ def bfs():
             cur_x = x + x_list[i]
             cur_y = y + y_list[i]
 
-            if 0 <= cur_x < m and 0 <= cur_y < n and map_check[cur_x][cur_y] == False and map_list[cur_x][cur_y] == 1:
+            if 0 <= cur_x < n and 0 <= cur_y < m and map_check[cur_x][cur_y] == False and map_list[cur_x][cur_y] == 1:
                 q.append((cur_x, cur_y, dist + 1)) 
                 map_check[cur_x][cur_y] = True
 
