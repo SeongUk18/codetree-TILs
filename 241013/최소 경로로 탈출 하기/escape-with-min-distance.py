@@ -33,7 +33,7 @@ def bfs():
 
 answer = bfs()
 
-if map_check[m - 1][n - 1] == False:
+if map_check[n - 1][m - 1] == False:
     print(-1)
 else:
     print(answer)
