@@ -14,12 +14,16 @@ y_list = [-1, 1, 0, 0]
 
 def bfs():
     q = deque()
-    q.append((0, 0, 1))
+    q.append((0, 0, -1))
     map_check[0][0] = True
 
     while q:
         x, y, dist = q.popleft()
         
+        # 목표 지점에 도달하면 거리 반환
+        if x == n - 1 and y == m - 1:
+            return dist + 1
+
 
         for i in range(4):
             cur_x = x + x_list[i]
@@ -29,11 +33,9 @@ def bfs():
                 q.append((cur_x, cur_y, dist + 1)) 
                 map_check[cur_x][cur_y] = True
 
-    return dist
+    return - 1
 
 answer = bfs()
 
-if map_check[n - 1][m - 1] == False:
-    print(-1)
-else:
-    print(answer)
+
+print(answer)
