@@ -14,7 +14,7 @@ y_list = [-1, 1, 0, 0]
 
 def bfs():
     q = deque()
-    q.append((0, 0, 0))
+    q.append((0, 0, 1))
     map_check[0][0] = True
 
     while q:
