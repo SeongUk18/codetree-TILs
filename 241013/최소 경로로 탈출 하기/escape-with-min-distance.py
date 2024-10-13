@@ -34,6 +34,6 @@ def bfs():
 answer = bfs()
 
 if answer == 0:
-    print(0)
+    print(-1)
 else:
     print(answer)
