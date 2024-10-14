@@ -4,6 +4,10 @@ from collections import deque
 n = int(input())
 
 start_x, start_y, end_x, end_y = map(int, input().split())
+start_x -= 1
+start_y -= 1
+end_x -= 1
+end_y -= 1
 
 map_list = [[False for _ in range(n)] for _ in range(n)]
 
