@@ -12,7 +12,7 @@ r, c = map(int, input().split())
 r -= 1
 c -= 1  # 값 보정
 
-next_idx = (r, c)
+next_idx = (c, r)
 for _ in range(k):
     x = next_idx[0]
     y = next_idx[1]
@@ -29,4 +29,4 @@ for _ in range(k):
         
 
 for i in next_idx:
-    print(i, end=" ")
+    print(i + 1, end=" ")
