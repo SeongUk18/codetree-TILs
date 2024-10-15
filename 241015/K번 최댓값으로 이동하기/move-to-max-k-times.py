@@ -12,15 +12,10 @@ r, c = map(int, input().split())
 r -= 1
 c -= 1  # 값 보정
 
-x_list = [0, 0, -1, 1]
-y_list = [-1, 1, 0, 0]
-
-q = deque()
-q.append((r, c))
-
+next_idx = (r, c)
 for _ in range(k):
-    x, y = q.popleft()
-    next_idx = (x, y)
+    x = next_idx[0]
+    y = next_idx[1]
     target = float('-inf')
     for i in range(n):
         for j in range(n):
@@ -30,8 +25,8 @@ for _ in range(k):
 
     if next_idx[0] == x and next_idx[1] == y:
         break
-    else:
-        q.append((next_idx[0], next_idx[1]))
 
-for i, j in q:
-    print(i, j)
+        
+
+for i in next_idx:
+    print(i, end=" ")
