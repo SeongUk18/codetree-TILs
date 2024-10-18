@@ -13,4 +13,7 @@ for i in range(1, m + 1):
         if coin_list[j] <= i:
             dp[i] = min(dp[i], dp[i - coin_list[j]] + 1)
 
-print(dp[m])
+if dp[m] == float('inf'):
+    print(-1)
+else:
+    print(dp[m])
