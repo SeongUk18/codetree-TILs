@@ -10,4 +10,7 @@ for i in range(len(coin_list)):
         if j >= coin_list[i]:
             dp[j] = max(dp[j], dp[j - coin_list[i]] + 1)
 
-print(dp[m])
+if dp[m] == float('-inf'):
+    print(-1)
+else:
+    print(dp[m])
