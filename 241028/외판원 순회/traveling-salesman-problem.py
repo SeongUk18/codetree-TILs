@@ -13,7 +13,7 @@ visited[0] = True
 def dfs(count, cur, cur_cost):
     global min_cost
 
-    if count == n:
+    if count == n and node_list[cur][0] != 0:
         min_cost = min(min_cost, cur_cost + node_list[cur][0])
         return 
 
