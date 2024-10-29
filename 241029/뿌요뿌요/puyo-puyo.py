@@ -42,6 +42,6 @@ for i in range(n):
             size = bfs(i, j, map_list[i][j])
             if size >= 4:
                 count += 1
-                answer = max(answer, size)
+            answer = max(answer, size)
 
 print(count, answer)
