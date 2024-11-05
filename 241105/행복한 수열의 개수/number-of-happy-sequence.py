@@ -14,9 +14,12 @@ for i in range(n):
         if prev_num == num_list[i][j]:
             count += 1
         else:
+            if count >= m:
+                answer += 1
             prev_num = num_list[i][j]
             count = 1
 
+    # 마지막 구간 검사
     if count >= m:
         answer += 1
 
@@ -28,9 +31,12 @@ for i in range(n):
         if prev_num == num_list[j][i]:
             count += 1
         else:
+            if count >= m:
+                answer += 1
             prev_num = num_list[j][i]
             count = 1
 
+    # 마지막 구간 검사
     if count >= m:
         answer += 1
 
