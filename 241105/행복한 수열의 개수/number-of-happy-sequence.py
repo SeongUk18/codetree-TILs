@@ -16,6 +16,7 @@ for i in range(n):
         else:
             if count >= m:
                 answer += 1
+                break
             prev_num = num_list[i][j]
             count = 1
 
@@ -33,6 +34,7 @@ for i in range(n):
         else:
             if count >= m:
                 answer += 1
+                break
             prev_num = num_list[j][i]
             count = 1
 
