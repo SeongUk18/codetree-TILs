@@ -18,3 +18,5 @@ for _ in range(n):
     elif command[0] == "p":
         comand, num = command.split()
         heapq.heappush(heap, int(num))
+    elif command[0] == "t":
+        print(heap[-1])
