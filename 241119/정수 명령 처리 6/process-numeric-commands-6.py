@@ -7,7 +7,7 @@ heap = []
 for _ in range(n):
     command = input()
     if command[:3] == "pop":
-        print(heap.pop())
+        print(heapq.heappop(heap))
     elif command[0] == "s":
         print(len(heap))
     elif command[0] == "e":
