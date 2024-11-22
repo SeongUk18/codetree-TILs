@@ -1,47 +1,32 @@
 import heapq
-from collections import defaultdict
 
-# 입력
+# 입력:
 n = int(input())
-num_list = list(map(int, input().split()))
+arr = list(map(int, input().split()))
 
-# 누적 합 계산
-prefix_sum = [0] * (n + 1)
-for i in range(n):
-    prefix_sum[i + 1] = prefix_sum[i] + num_list[i]
-
+# 변수 선언
+sum_val = 0
 max_avg = 0
-min_heap = []
-removed_count = defaultdict(int)  # 값별 제거 횟수 추적
+pq = []
 
-# 힙 초기화 (K = 1 기준)
-for i in range(1, n):
-    heapq.heappush(min_heap, num_list[i])
+heapq.heappush(pq, arr[n - 1])
+sum_val += arr[n - 1]
+# k가 N - 2일 때부터 1일 때까지 거꾸로 탐색합니다.
+# priority queue를 이용하여 진행합니다.
+for i in range(n - 2, 0, -1):
+    # 앞에서부터 K개를 삭제하고 나면
+    # 뒤에 i ~ n - 1 까지의 숫자만이 남습니다.
+    heapq.heappush(pq, arr[i])
+    sum_val += arr[i]
 
-# K를 1부터 N-2까지 순회
-for K in range(1, n - 1):
-    # K번째 값을 제외 (제거 카운트 추가)
-    removed_count[num_list[K - 1]] += 1
+    # 남아있는 정수 중 가장 작은 숫자를 찾아
+    # 그 숫자를 제외한 평균을 구합니다.
+    min_num = pq[0]
+    avg = (sum_val - min_num) / (n - i - 1)
 
-    # Lazy Removal: 유효한 최소값 찾기
-    while min_heap and removed_count[min_heap[0]] > 0:
-        removed_count[min_heap[0]] -= 1  # 제거 처리
-        heapq.heappop(min_heap)
+    # 평균이 최대가 된다면 정답을 현재 평균으로 갱신해줍니다.
+    if max_avg < avg:
+        max_avg = avg
 
-    # 유효한 최소값 추출
-    if min_heap:
-        smallest = heapq.heappop(min_heap)
-    else:
-        break
-
-    # 남아있는 합 계산
-    total_sum = prefix_sum[n] - prefix_sum[K] - smallest
-
-    # 남아있는 숫자의 평균 계산
-    remaining_count = n - K - 1
-    current_avg = total_sum / remaining_count
-
-    # 최대 평균 갱신
-    max_avg = max(max_avg, current_avg)
-
+# 평균값의 최대를 출력합니다.
 print(f"{max_avg:.2f}")
