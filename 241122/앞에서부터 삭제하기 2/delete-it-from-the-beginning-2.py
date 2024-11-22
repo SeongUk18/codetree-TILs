@@ -1,4 +1,5 @@
 import heapq
+from collections import defaultdict
 
 # 입력
 n = int(input())
@@ -10,17 +11,28 @@ for i in range(n):
     prefix_sum[i + 1] = prefix_sum[i] + num_list[i]
 
 max_avg = 0
+min_heap = []
+removed_count = defaultdict(int)  # 값별 제거 횟수 추적
+
+# 힙 초기화 (K = 1 기준)
+for i in range(1, n):
+    heapq.heappush(min_heap, num_list[i])
 
 # K를 1부터 N-2까지 순회
 for K in range(1, n - 1):
-    # 남은 숫자 리스트 생성
-    remaining_nums = num_list[K:]
+    # K번째 값을 제외 (제거 카운트 추가)
+    removed_count[num_list[K - 1]] += 1
 
-    # 힙으로 변환 (O(N - K))
-    heapq.heapify(remaining_nums)
+    # Lazy Removal: 유효한 최소값 찾기
+    while min_heap and removed_count[min_heap[0]] > 0:
+        removed_count[min_heap[0]] -= 1  # 제거 처리
+        heapq.heappop(min_heap)
 
-    # 가장 작은 값 제거
-    smallest = heapq.heappop(remaining_nums)
+    # 유효한 최소값 추출
+    if min_heap:
+        smallest = heapq.heappop(min_heap)
+    else:
+        break
 
     # 남아있는 합 계산
     total_sum = prefix_sum[n] - prefix_sum[K] - smallest
