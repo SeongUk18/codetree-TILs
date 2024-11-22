@@ -20,6 +20,6 @@ for i in range(1, n - 1):
 
     total_sum = prefix_sum[n] - prefix_sum[i] - smallest
 
-    max_avg = max(max_avg, total_sum / len(new_num_list))
+    max_avg = max(max_avg, total_sum / (n - i - 1))
 
 print(f"{max_avg:0.2f}")
