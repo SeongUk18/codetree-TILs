@@ -11,12 +11,15 @@ for i in num_list:
 
 
 while len(heap) > 1:
-    x = heapq.heappop(heap)
-    y = heapq.heappop(heap)
+    x = -heapq.heappop(heap)
+    y = -heapq.heappop(heap)
 
     diff = x - y
 
     if diff != 0:
         heapq.heappush(heap, -diff)
 
-print(heapq.heappop(heap))
+if heap:
+    print(-heapq.heappop(heap))
+else:
+    print(-1)
