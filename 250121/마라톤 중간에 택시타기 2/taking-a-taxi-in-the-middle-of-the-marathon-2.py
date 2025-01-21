@@ -9,7 +9,7 @@ min_dist = float('inf')
 def backtracking(cur_x, cur_y, n, road, dist):
     global min_dist
 
-    if dist >= min_dist:
+    if dist >= min_dist or road > n - 3:
         return
 
     if road == n - 3:
