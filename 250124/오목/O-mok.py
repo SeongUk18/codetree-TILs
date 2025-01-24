@@ -43,5 +43,5 @@ for i in range(19):
 
             if cnt == 5:
                 print(color)
-                print(i - 2, j + k - 1)
+                print(i - 1, j + k - 1)
                 break
