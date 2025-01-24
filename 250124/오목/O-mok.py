@@ -38,7 +38,7 @@ for i in range(19):
 
         cnt = 0
         for k in range(5):
-            if if i >=4 and color == board[i - k][j + k]:
+            if i >=4 and color == board[i - k][j + k]:
                 cnt += 1
 
             if cnt == 5:
