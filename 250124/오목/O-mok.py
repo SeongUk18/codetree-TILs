@@ -25,3 +25,13 @@ for i in range(19):
                 print(color)
                 print(i + k - 1, j + 1)
                 break
+
+        cnt = 0
+        for k in range(5):
+            if color == board[i + k][j + k]:
+                cnt += 1
+
+            if cnt == 5:
+                print(color)
+                print(i + k - 1, j + k - 1)
+                break
