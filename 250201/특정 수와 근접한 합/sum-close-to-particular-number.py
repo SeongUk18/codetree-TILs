@@ -1,13 +1,12 @@
+from itertools import combinations
+
 N, S = map(int, input().split())
 arr = list(map(int, input().split()))
 
-num = sum(arr)
+total_sum = sum(arr)
+min_diff = float('inf')
+for i, j in combinations(range(N), 2):
+    new_sum = total_sum - (arr[i] + arr[j])
+    min_diff = min(min_diff, abs(S - new_sum))
 
-if S >= num:
-    new_arr = sorted(arr)
-    new_arr = new_arr[2:]
-else:
-    new_arr = sorted(arr)
-    new_arr = new_arr[:-2]
-
-print(abs(S - sum(new_arr)))
+print(min_diff)
