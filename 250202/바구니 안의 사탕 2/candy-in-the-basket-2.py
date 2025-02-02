@@ -17,7 +17,7 @@ for i in range(N):
 
 max_candy = float('-inf')
 
-for i in range(K, max(pos) - 3):
+for i in range(K, max(pos) - K):
     count = 0
     for j in range(i - K, i + K + 1):
         if j in candy_dict:
