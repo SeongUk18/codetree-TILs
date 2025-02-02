@@ -18,7 +18,7 @@ for i in range(N):
 max_candy = float('-inf')
 # print(candy_dict)
 # print(max(pos))
-for i in range(abs(max(pos) - K + 1)):
+for i in range(100):
     count = 0
     for j in range(i, i + (2 * K) + 1):
         if j in candy_dict:
