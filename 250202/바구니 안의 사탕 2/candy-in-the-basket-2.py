@@ -16,10 +16,11 @@ for i in range(N):
         candy_dict[pos[i]] = candy[i]
 
 max_candy = float('-inf')
-
-for i in range(K, max(pos) - K + 1):
+# print(candy_dict)
+# print(max(pos))
+for i in range(max(pos) - K + 1):
     count = 0
-    for j in range(i - K, i + K + 1):
+    for j in range(i, i + (2 * K) + 1):
         if j in candy_dict:
             count += candy_dict[j]
     max_candy = max(max_candy, count)
