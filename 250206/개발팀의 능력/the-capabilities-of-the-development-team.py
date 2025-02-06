@@ -19,7 +19,7 @@ for comb in combinations(arr, 2):
         abil_dict[min_diff] = [sum(comb), sum(comb2), sum(last)]
 
 # print(abil_dict)
-if abil_dict[min_diff][0] == abil_dict[min_diff][1] == abil_dict[min_diff][2]:
+if min_diff == float('inf') or abil_dict[min_diff][0] == abil_dict[min_diff][1] == abil_dict[min_diff][2]:
     print(-1)
 else:
     print(min_diff) 
