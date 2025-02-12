@@ -15,7 +15,7 @@ for i in range(N):
             num += 1
             cost += P[i]
 
-        if cost >= B:
+        if cost > B:
             break
     max_num = max(max_num, num - 1)
 
