@@ -9,16 +9,14 @@ for i in range(N):
     num = 0
     for j in range(N):
         if i == j:
-            num += 1
-            cost += P[i] / 2
+            cost += P[j] / 2
         else:
-            num += 1
-            cost += P[i]
+            cost += P[j]
 
-        if cost > B:
-            break
-    max_num = max(max_num, num - 1)
+        if cost <= B:
+            num += 1
+            # print(cost, num)
+    max_num = max(max_num, num)
     
-if sum(P[:-1]) + P[-1] / 2 <= B:
-    max_num = N
+    
 print(max_num)
