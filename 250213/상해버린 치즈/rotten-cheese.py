@@ -17,13 +17,15 @@ for _ in range(S):
     sick_p.append(person)
 
 milk_dict = defaultdict(list)
-eat_mike = defaultdict(list)
+eat_mike = defaultdict(set)
 for i in range(D):
-    milk_dict[m[i]].append((p[i], t[i]))
-    eat_mike[m[i]].append(p[i])
+    eat_mike[m[i]].add(p[i])
 
+    milk_dict[m[i]].append((p[i], t[i]))
+    
 # print(milk_dict)
 # print(sick_dict)
+# print(eat_mike)
 
 max_person = float('-inf')
 
@@ -31,6 +33,6 @@ max_person = float('-inf')
 for key, val in milk_dict.items():
     if all(s_p in eat_mike[key] for s_p in sick_p):
         if all(person in sick_dict or time > sick_dict[person] for person, time in val):
-            max_person = max(max_person, len(val))
+            max_person = max(max_person, len(eat_mike[key]))
 
 print(max_person)
