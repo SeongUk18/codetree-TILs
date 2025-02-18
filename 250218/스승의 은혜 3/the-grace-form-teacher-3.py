@@ -1,28 +1,31 @@
-from itertools import combinations
-
 N, B = map(int, input().split())
 gifts = [tuple(map(int, input().split())) for _ in range(N)]
-P = [gift[0] for gift in gifts]
-S = [gift[1] for gift in gifts]
+
+# 가격 + 배송비 기준으로 정렬
+gifts.sort(key=lambda x: x[0] + x[1])
 
 max_people = 0
-for i in range(N, 0, -1):
-    for people in combinations(gifts, i):
-        people = list(people)
-        people.sort()
-        # print(people)
-        total_price = 0
-        for price, delivery in people:
-            # print(price, delivery)
-            if price == people[-1][0]:
-                price = price / 2
-            total_price += price
-            total_price += delivery
-            if total_price >= B:
-                break
 
-        if total_price <= B:
-            max_people = max(max_people, i)
+# 각 인원을 선택하는 경우를 최적화
+for i in range(N):
+    total_price = 0
+    count = 0
+
+    for j in range(N):
+        price, delivery = gifts[j]
+        
+        # i번째 선물을 할인하는 경우
+        if j == i:
+            price //= 2  # 반값 할인 적용
+        
+        total_price += price + delivery
+
+        # 예산 초과 시 중단
+        if total_price > B:
             break
+
+        count += 1
+    
+    max_people = max(max_people, count)
 
 print(max_people)
