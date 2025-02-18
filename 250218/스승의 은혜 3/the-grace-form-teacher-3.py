@@ -12,9 +12,14 @@ for i in range(N, 0, -1):
         people.sort()
         # print(people)
         total_price = 0
-        for price, delivery in people[:-1]:
+        for price, delivery in people:
+            # print(price, delivery)
+            if price == people[-1][0]:
+                price = price / 2
             total_price += price
             total_price += delivery
+            if total_price >= B:
+                break
 
         if total_price <= B:
             max_people = max(max_people, i)
