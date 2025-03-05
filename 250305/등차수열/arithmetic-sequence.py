@@ -7,9 +7,9 @@ for i in range(n):
     for k in range(min(a), max(a)):
         diff = k - a[i]
 
-        if (diff + k) in a and diff != 0:
+        if (diff + k) > a[i] and (diff + k) in a:
             # print(a[i], diff, diff + k, k)
             answer += 1
     
 
-print(answer // 2)
+print(answer)
