@@ -1,15 +1,27 @@
-n = int(input())
-a = list(map(int, input().split()))
+from itertools import combinations
 
-answer = 0
-
-for i in range(n):
-    for j in range(i + 1, n):
-        # K를 계산
-        k = (a[i] + a[j]) // 2
+def max_arithmetic_sequences(arr):
+    n = len(arr)
+    max_count = 0
+    
+    for i, j in combinations(range(n), 2):
+        ai, aj = arr[i], arr[j]
+        if (ai + aj) % 2 != 0:
+            continue 
         
-        # 등차수열 조건 확인
-        if (a[j] - k) == (k - a[i]):
-            answer += 1
+        K = (ai + aj) // 2
+        count = 0
+        
+        for x, y in combinations(range(n), 2):
+            ax, ay = arr[x], arr[y]
+            if (ax + ay) // 2 == K and (ax + ay) % 2 == 0:
+                count += 1
+        
+        max_count = max(max_count, count)
+    
+    return max_count
 
-print(answer)
+N = int(input())
+arr = list(map(int, input().split()))
+
+print(max_arithmetic_sequences(arr))
