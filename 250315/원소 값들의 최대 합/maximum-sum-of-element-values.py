@@ -7,12 +7,12 @@ for i in range(1, n + 1):
     start = i
     point = 0
     for _ in range(m):
-        point += n_dict[start]
         next = n_dict[start]
         # print(start, n_dict[start])
         # print(next, n_dict[next])
+        point += next
         n_dict[start], n_dict[next] = n_dict[next], n_dict[start]
-        # start = n_dict[start]
+        # print(next)
         # print(start)
         # print(point)
     # print(point)
