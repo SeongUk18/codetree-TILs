@@ -26,26 +26,26 @@ for i in range(len(x)):
     if count <= 3:
         flag = True
 
-y_set = set()
-for i in range(len(x)):
-    count = 0
-    x_set = set()
-    if y[i] not in y_set:
-        y_set.add(y[i])
-    count = len(y_set)
+# y_set = set()
+# for i in range(len(x)):
+#     count = 0
+#     x_set = set()
+#     if y[i] not in y_set:
+#         y_set.add(y[i])
+#     count = len(y_set)
 
-    for j in range(len(x)):
-        if y[j] in y_set:
-            continue
-        else:
-            if x[j] not in x_set:
-                x_set.add(x[j])
-                count += 1
-        if count > 3:
-            break
+#     for j in range(len(x)):
+#         if y[j] in y_set:
+#             continue
+#         else:
+#             if x[j] not in x_set:
+#                 x_set.add(x[j])
+#                 count += 1
+#         if count > 3:
+#             break
     
-    if count <= 3:
-        flag = True
+#     if count <= 3:
+#         flag = True
 
 
 if flag:
