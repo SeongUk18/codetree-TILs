@@ -2,27 +2,32 @@ N = int(input())
 seat = input()
 
 max_dist = float('-inf')
+seat = list(seat)
+# print(seat)
 for i in range(N):
     if seat[i] == "0":
-        front, back = 1, 1
+        new_seat = seat[:]
+        new_seat[i] = "1"
+        min_dist = float('inf')
         dist = 1
-        for j in range(N):
-            if j == 0:
-                front = 20
+        dist_list = []
+        # print(new_seat)
+        for j in range(1, N):
             if j == N - 1:
-                back = 20
-            if j < i and seat[j] == "1":
-                front = 1
-            elif j < i and seat[j] == "0":
-                front += 1
-            elif j > i and seat[j] == "1":
-                break
-            elif j > i and seat[j] == "0":
-                back += 1
-        # print(i)
-        # print(front, back, dist)
-        dist = min(front, back)
+                if new_seat[j] == "0":
+                    dist += 1
+                dist_list.append(dist)
+            if new_seat[0] == "0":
+                dist += 1
 
-        max_dist = max(max_dist, dist)
+            if new_seat[j] == "1":
+                # print(j, dist)
+                dist_list.append(dist)
+                dist = 1
+            else:
+                dist += 1
+        # print(dist_list)
+        max_dist = max(min(dist_list), max_dist)
+
 
 print(max_dist)
