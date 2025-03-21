@@ -2,6 +2,7 @@ N, K = map(int, input().split())
 arr = [int(input()) for _ in range(N)]
 
 max_count = float('-inf')
+arr.sort()
 for i in range(N):
     min_num = arr[i]
     max_num = arr[i]
