@@ -11,9 +11,9 @@ def find(num):
             return False
     return True
 
-
+start, end = ranges[0]
 answer = 0
-for i in range(10, 0, -1):
+for i in range(end // 2, start // 2, -1):
     num = i
 
     if find(num):
