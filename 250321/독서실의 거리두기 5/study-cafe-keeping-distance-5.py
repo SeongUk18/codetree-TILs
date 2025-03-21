@@ -12,13 +12,14 @@ for i in range(N):
         dist = 1
         dist_list = []
         # print(new_seat)
-        for j in range(1, N):
+        for j in range(N):
             if j == N - 1:
                 if new_seat[j] == "0":
                     dist += 1
                 dist_list.append(dist)
-            if new_seat[0] == "0":
-                dist += 1
+            if j == 0:
+                if new_seat[j] == "1":
+                    continue
 
             if new_seat[j] == "1":
                 # print(j, dist)
