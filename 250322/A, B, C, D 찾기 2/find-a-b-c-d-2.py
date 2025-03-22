@@ -6,13 +6,10 @@ A = nums[0]
 
 B = nums[1]
 
-for i in range(2, len(nums)):
-    if nums[i] < A + B:
-        C = nums[i]
-        break
-    else:
-        C = nums[i]
-        break
+if nums[2] == A + B:
+    C = nums[3]
+else:
+    C = nums[2]
 
 num_set = [A, B, C, A + B, A + C, B + C, A + B + C]
 for i in nums:
