@@ -9,6 +9,6 @@ def solve():
             print("intersecting")
             return
 
-    print("noninterssecting")
+    print("nonintersecting")
 
 solve()
