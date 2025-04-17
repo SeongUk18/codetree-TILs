@@ -5,7 +5,7 @@ y_list = list(range(x3, x4 + 1))
 
 def solve():
     for x in x_list:
-        if x in x_list:
+        if x in y_list:
             print("intersecting")
             return
 
