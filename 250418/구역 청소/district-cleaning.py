@@ -1,7 +1,17 @@
 a, b = map(int, input().split())
 c, d = map(int, input().split())
 
-if b > c or a < d:
-    print(max(b, d) - min(a, c))
-else:
-    print(b - a + d - c)
+grid = [False for _ in range(101)]
+
+answer = 0
+for i in range(a, b):
+    grid[i] = True
+
+for i in range(c, d):
+    grid[i] = True
+
+for i in range(len(grid)):
+    if grid[i]:
+        answer += 1
+
+print(answer)
