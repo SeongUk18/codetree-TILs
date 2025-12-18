@@ -15,8 +15,15 @@ read_people = set()
 for i in range(p - 1, m):
     read_people.add(c[i])
 
-if p >= 2 and u[p - 1] == u[p - 2]:
-    read_people.add(c[p - 2])
+
+cnt = 1
+while p - cnt - 1 >= 0:
+    if u[p - cnt] == u[p - 1 - cnt]:
+        read_people.add(c[p - cnt - 1])
+        cnt += 1
+    else:
+        break
+    
 
 for i in read_people:
     people.remove(i)
