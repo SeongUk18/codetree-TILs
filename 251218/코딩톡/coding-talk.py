@@ -18,5 +18,8 @@ for i in read_people:
     people.remove(i)
 
 # print(people)
-for p in people:
-    print(p, end=" ")
+if u[-1] == 0:
+    print("")
+else:
+    for p in people:
+        print(p, end=" ")
