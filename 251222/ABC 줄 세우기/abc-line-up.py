@@ -12,12 +12,14 @@ for i in range(65, 65 + n):
 
 for i in range(n):
     if final[i] != arr[i]:
-        find = 0
-        for j in range(i + 1, n):
+        for j in range(i, n):
             if arr[j] == final[i]:
                 find = j
                 break
-        arr[i], arr[find] = arr[find], arr[i]
-        answer += 1
 
+        for j in range(find, i, -1):
+            answer += 1
+            arr[j], arr[j - 1] = arr[j - 1], arr[j]
+            # print(arr)
+                
 print(answer)        
