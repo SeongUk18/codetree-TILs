@@ -3,17 +3,20 @@ seats = list(input())
 
 # Please write your code here.
 max_dist = float('-inf')
-flag = False
+
+start = 0
 
 for i in range(N):
-    if flag == False and seats[i] == "1":
-        flag = True
-        start = i
-
-    if seats[i] == "0" and flag:
+    if seats[i] == "0":
         seats[i] = "1"
         dists = []
         dist = 1
+
+        for k in range(N):
+            if seats[k] == "1":
+                start = k
+                break
+
         for j in range(start + 1, N):
             if seats[j] == "0":
                 dist += 1
