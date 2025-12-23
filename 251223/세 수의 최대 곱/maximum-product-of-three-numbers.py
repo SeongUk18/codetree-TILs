@@ -1,15 +1,8 @@
-from itertools import combinations
-
 n = int(input())
 arr = list(map(int, input().split()))
 
 # Please write your code here.
-max_num = float('-inf')
-num = 0
+arr.sort()
 
-for com in combinations(arr, 3):
-    # print(com)
-    num = com[0] * com[1] * com[2]
-    max_num = max(max_num, num)
-
+max_num = max((arr[-1]* arr[-2]*arr[-3]),arr[-1]*arr[0]*arr[1])
 print(max_num)
