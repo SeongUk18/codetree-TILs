@@ -20,7 +20,7 @@ def bfs():
             cur_x = x + x_list[i]
             cur_y = y + y_list[i]
 
-            if cur_x < 10 and cur_y < 10 and checked[cur_x][cur_y] == False:
+            if 0 <= cur_x < 10 and 0 <= cur_y < 10 and checked[cur_x][cur_y] == False:
                 if board[cur_x][cur_y] == ".":
                     q.append((cur_x, cur_y, dist + 1))
                     checked[cur_x][cur_y] = True
