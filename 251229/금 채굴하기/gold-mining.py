@@ -35,7 +35,7 @@ def price(k):
 
 for i in range(n):
     for j in range(n):
-        for k in range(n):
+        for k in range(n + 1):
             map_list = [[False for _ in range(n)] for _ in range(n)]
             if grid[i][j] == 1:
                 q.append((i, j, 0))
