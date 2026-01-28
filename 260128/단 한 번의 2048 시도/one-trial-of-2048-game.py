@@ -57,7 +57,7 @@ if dir == "R":
                         grid[k][i], grid[k][j] = grid[k][j], grid[k][i]
                         break
 
-if dir == "U":
+if dir == "D":
     for k in range(4):
         start = 3
         while start >= 0:    
@@ -82,7 +82,7 @@ if dir == "U":
                     if grid[j][k] != 0:
                         grid[i][k], grid[j][k] = grid[j][k], grid[i][k]
                         break
-if dir == "D":
+if dir == "U":
     for k in range(4):
         start = 0
         while start <= 3:    
