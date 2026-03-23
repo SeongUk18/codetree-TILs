@@ -16,7 +16,7 @@ while len(heap) > 1:
     if num == 0:
         continue
     else:
-        heapq.heappush(arr, - num)
+        heapq.heappush(heap, - num)
 
 if heap:
     print(- heap[0])
