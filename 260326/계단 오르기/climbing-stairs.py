@@ -13,4 +13,4 @@ for i in range(2, N + 1):
     if i >= 3:
         dp[i] += dp[i - 3]
 
-print(dp[N])
+print(dp[N] % 10007)
