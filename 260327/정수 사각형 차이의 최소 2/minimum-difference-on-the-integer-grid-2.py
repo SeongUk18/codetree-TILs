@@ -14,7 +14,7 @@ for i in range(1, n):
 
 for i in range(1, n):
     for j in range(1, n):
-        if max(dp[i - 1][j][1], grid[i][j]) - min(dp[i - 1][j][0], grid[i][j]) >= max(dp[i][j - 1][1], grid[i][j]) - min(dp[i][j - 1][0], grid[i][j]):
+        if abs(max(dp[i - 1][j][1], grid[i][j]) - min(dp[i - 1][j][0], grid[i][j])) >= abs(max(dp[i][j - 1][1], grid[i][j]) - min(dp[i][j - 1][0], grid[i][j])):
             dp[i][j] = (min(dp[i][j - 1][0], grid[i][j]), max(dp[i][j - 1][1], grid[i][j]))
         else:
             dp[i][j] = (min(dp[i - 1][j][0], grid[i][j]), max(dp[i - 1][j][1], grid[i][j]))
