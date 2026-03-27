@@ -15,7 +15,7 @@ for i in range(n):
 
             if 0 <= x < n and 0 <= y < n:
                 if grid[y][x] < grid[i][j]:
-                    dp[i][j] += 1
+                    dp[i][j] = max(dp[i][j], dp[y][x] + 1)
 
 # print(dp)
 
