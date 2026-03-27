@@ -2,20 +2,35 @@ n = int(input())
 grid = [list(map(int, input().split())) for _ in range(n)]
 
 # Please write your code here.
-dp = [[(101, 0) for _ in range(n)] for _ in range(n)]
+answer = float('inf')
 
-dp[0][0] = (grid[0][0], grid[0][0])
+for low in range(1, 101):
+    if grid[0][0] < low:
+        continue
 
-for i in range(1, n):
-    dp[0][i] = (min(grid[0][i], dp[0][i - 1][0]), max(grid[0][i], dp[0][i - 1][1]))
-    dp[i][0] = (min(grid[i][0], dp[i - 1][0][0]), max(grid[i][0], dp[i - 1][0][1]))
+    dp = [[float('inf') for _ in range(n)] for _ in range(n)]
 
-# print(dp)
+    dp[0][0] = grid[0][0]
 
-for i in range(1, n):
-    for j in range(1, n):
-        if abs(max(dp[i - 1][j][1], grid[i][j]) - min(dp[i - 1][j][0], grid[i][j])) >= abs(max(dp[i][j - 1][1], grid[i][j]) - min(dp[i][j - 1][0], grid[i][j])):
-            dp[i][j] = (min(dp[i][j - 1][0], grid[i][j]), max(dp[i][j - 1][1], grid[i][j]))
-        else:
-            dp[i][j] = (min(dp[i - 1][j][0], grid[i][j]), max(dp[i - 1][j][1], grid[i][j]))
-print(dp[n - 1][n - 1][1] - dp[n - 1][n - 1][0])
+    for i in range(n):
+        for j in range(n):
+            if i == 0 and j == 0:
+                continue
+            
+            if grid[i][j] < low:
+                continue
+
+            prev = 101
+
+            if i > 0:
+                prev = min(dp[i - 1][j], prev)
+            if j > 0:
+                prev= min(dp[i][j - 1], prev)
+
+            if prev != 101:
+                dp[i][j] = max(prev, grid[i][j])
+
+    if dp[n - 1][n - 1] != float('inf'):
+        answer = min(answer, dp[n - 1][n - 1] - low)
+
+print(answer)
