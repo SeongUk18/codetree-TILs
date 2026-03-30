@@ -8,12 +8,11 @@ dp[0][0] = 1
 
 for i in range(n):
     for j in range(m):
-
+        if dp[i][j] == -1:
+            continue
+            
         for a in range(i + 1, n):
             for b in range(j + 1, m):
-                if dp[i][j] == -1:
-                    continue
-
                 if grid[i][j] < grid[a][b]:
                     dp[a][b] = max(dp[a][b], dp[i][j] + 1)
 
