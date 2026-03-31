@@ -8,14 +8,11 @@ p = [job[2] for job in jobs]
 jobs.sort()
 # print(jobs)
 
-dp = [0] * n
-dp[0] = jobs[0][2]
+dp = [job[2] for job in jobs]
 
 for i in range(n):
     for j in range(i + 1, n):
         if jobs[i][1] < jobs[j][0]:
             dp[j] = max(dp[i] + jobs[j][2], dp[j])
-        else:
-            dp[j] = max(dp[i], jobs[j][2])
-
+    
 print(max(dp))
