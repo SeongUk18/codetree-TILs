@@ -14,7 +14,7 @@ dp[0] = jobs[0][2]
 for i in range(n):
     for j in range(i + 1, n):
         if jobs[i][1] < jobs[j][0]:
-            dp[j] = max(dp[i] + jobs[j][2], dp[i])
+            dp[j] = max(dp[i] + jobs[j][2], dp[j])
         else:
             dp[j] = max(dp[i], jobs[j][2])
 
