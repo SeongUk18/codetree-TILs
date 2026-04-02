@@ -7,7 +7,7 @@ dp[0] = 0
 
 for i in range(M + 1):
     for c in coin:
-        if dp[i - c] == -1:
+        if 0 <= i - c <= M and dp[i - c] == -1:
             continue
 
         if i - c >= 0:
