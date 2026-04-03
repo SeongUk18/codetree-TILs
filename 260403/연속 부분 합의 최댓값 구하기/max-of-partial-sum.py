@@ -10,4 +10,4 @@ for i in range(n):
 for i in range(1, n):
     dp[i] = max(dp[i], dp[i - 1] + arr[i])
 
-print(dp[n - 1])
+print(max(dp))
